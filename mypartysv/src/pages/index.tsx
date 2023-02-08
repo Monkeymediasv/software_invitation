@@ -6,6 +6,7 @@ import { GetServerSideProps, NextPage } from "next";
 import { UserRole } from "@prisma/client";
 import { unstable_getServerSession, User } from "next-auth";
 import { authOptions } from "./api/auth/[...nextauth]";
+import Cards from "@/components/cardinvitation";
 
 
 const Home: NextPage<{ user: User }> = ({ user }) => {
@@ -21,10 +22,12 @@ const Home: NextPage<{ user: User }> = ({ user }) => {
 
         {user.role === UserRole.ADMIN ? (
           <div className="grid grid-cols-3 gap-x-4 gap-y-4 p-2">
-    
+              si eres admin
           </div>
         ) : (
-          <div/>
+          <div>
+            <Cards></Cards>
+          </div>
         )}
       </>
     </>

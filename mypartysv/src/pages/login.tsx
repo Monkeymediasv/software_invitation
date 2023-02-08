@@ -3,7 +3,11 @@ import { NextPage } from "next";
 import Head from "next/head";
 import { signIn } from "next-auth/react";
 
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faFacebook,
+  faGoogle,
+} from "@fortawesome/free-brands-svg-icons";
 
 const Login: NextPage = () => {
   return (
@@ -36,22 +40,18 @@ const Login: NextPage = () => {
                     className="w-80 bg-facebook text-white text-l py-2 px-5 mb-3 flex flex-row justify-evenly"
                     onClick={() => signIn("facebook", { callbackUrl: "/" })}
                   >
-                    
+                    <FontAwesomeIcon
+                      className="text-xl pl-1.5"
+                      icon={faFacebook}
+                    />
                     <span>Inicia sesión con Facebook</span>
                   </button>
                   <button
                     className="w-80 bg-google text-white text-l py-2 px-5 mb-3 flex flex-row justify-evenly"
                     onClick={() => signIn("google", { callbackUrl: "/" })}
                   >
-                    
+                     <FontAwesomeIcon className="text-xl" icon={faGoogle} />
                     <span>Inicia sesión con Google</span>
-                  </button>
-                  <button
-                    className="w-80 bg-discord text-white text-l py-2 px-5 mb-3 flex flex-row justify-evenly"
-                    onClick={() => signIn("discord", { callbackUrl: "/" })}
-                  >
-                   
-                    <span>Inicia sesión con Discord</span>
                   </button>
                 </div>
               </div>
